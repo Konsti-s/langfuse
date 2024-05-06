@@ -104,14 +104,15 @@ export const UpdateSpanBody = UpdateEventEvent.extend({
 export const CreateGenerationBody = CreateSpanBody.extend({
   completionStartTime: stringDate,
   model: z.string().nullish(),
-  modelParameters: z
-    .record(
-      z.string(),
-      z
-        .union([z.string(), z.number(), z.boolean(), z.array(z.string())])
-        .nullish(),
-    )
-    .nullish(),
+  // modelParameters: z
+  //   .record(
+  //     z.string(),
+  //     z
+  //       .union([z.string(), z.number(), z.boolean(), z.array(z.string())])
+  //       .nullish(),
+  //   )
+  //   .nullish(),
+  modelParameters: z.unknown().nullish(),
   usage: usage,
   promptName: z.string().nullish(),
   promptVersion: z.number().int().nullish(),
@@ -126,14 +127,15 @@ export const CreateGenerationBody = CreateSpanBody.extend({
 export const UpdateGenerationBody = UpdateSpanBody.extend({
   completionStartTime: stringDate,
   model: z.string().nullish(),
-  modelParameters: z
-    .record(
-      z.string(),
-      z
-        .union([z.string(), z.number(), z.boolean(), z.array(z.string())])
-        .nullish(),
-    )
-    .nullish(),
+  // modelParameters: z
+  //   .record(
+  //     z.string(),
+  //     z
+  //       .union([z.string(), z.number(), z.boolean(), z.array(z.string())])
+  //       .nullish(),
+  //   )
+  //   .nullish(),
+  modelParameters: z.unknown().nullish(),
   usage: usage,
   promptName: z.string().nullish(),
   promptVersion: z.number().int().nullish(),

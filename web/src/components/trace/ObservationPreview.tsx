@@ -147,6 +147,13 @@ export const ObservationPreview = (props: {
           output={observationWithInputAndOutput.data?.output ?? undefined}
           isLoading={observationWithInputAndOutput.isLoading}
         />
+        {preloadedObservation.modelParameters?.tools ? (
+          <JSONView
+            key={preloadedObservation.id + "-tools"}
+            title="Tools"
+            json={preloadedObservation.modelParameters?.tools}
+          />
+        ) : null}
         {preloadedObservation.statusMessage ? (
           <JSONView
             key={preloadedObservation.id + "-status"}
